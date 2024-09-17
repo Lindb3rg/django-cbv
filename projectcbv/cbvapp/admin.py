@@ -1,3 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
+from cbvapp import models
+
+
+admin.site.register(models.School)
+admin.site.register(models.Student)
+
+
