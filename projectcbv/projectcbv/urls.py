@@ -21,5 +21,5 @@ from cbvapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.IndexView.as_view(), name='index'),
-    path('cbvapp', include('cbvapp.urls'),name="cbvapp"),
+    path('cbvapp/', include('cbvapp.urls'),name="cbvapp"),
 ]
