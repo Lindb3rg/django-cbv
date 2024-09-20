@@ -1,0 +1,30 @@
+{% extends 'cbvapp/cbvapp_base.html' %}
+
+{% block body_block %}
+
+<h1>
+    {% if not form.instance.pk %}
+    Create School
+    {% else %}
+    Update School
+    {% endif %}
+    
+</h1>
+
+<form method="post">{% csrf_token %}
+    {% for field in form %}
+        <div class="fieldWrapper">
+            {{ field.errors }}
+            {{ field.label_tag }}
+            {{ field }}
+        </div>
+    {% endfor %}
+    <p><input type="submit" class="btn btn-primary" value="submit"></p>
+</form>
+
+
+
+
+
+
+{% endblock %}

@@ -1,5 +1,13 @@
 from django.shortcuts import render
-from django.views.generic import View,TemplateView,ListView,DetailView
+from django.views.generic import (View,
+                                  TemplateView,
+                                  ListView,
+                                  DetailView,
+                                  CreateView,
+                                  UpdateView,
+                                  DeleteView)
+
+
 
 from . import models
 
@@ -18,5 +26,19 @@ class SchoolDetailView(DetailView):
     model = models.School
     template_name = 'cbvapp/school_detail.html'
 
+class SchoolCreateView(CreateView):
+    model = models.School
+    fields = ["name","principal","location"]
+    
 
-        
+class SchoolUpdateView(UpdateView):
+    fields = ['name','principal','location']
+    model = models.School
+
+class CarCreateView(CreateView):
+    model = models.Car
+    fields = ["brand","license_plate","manufacturing_year"]
+    
+
+
+

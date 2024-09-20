@@ -12,6 +12,14 @@
     {% for student in school_detail.students.all %}
     <p>{{student.name}} who is {{student.age}} years old.</p>
     {% endfor %}
+    
+</div>
+<div class="container">
+    <p>
+        <h1>{{school_detail.pk}}</h1>
+        <a class="btn btn-warning" href="{% url 'cbvapp:update' pk=school_detail.pk %}">Update</a>
+    </p>
+
 </div>
 
 
